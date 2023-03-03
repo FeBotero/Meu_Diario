@@ -36,11 +36,14 @@
             (   ) Controle de expiração de Token
             (   ) Armazenamento em BD
     [   ] Criação de anotação
+        (   ) Type:{
+            content,
+            author,
         (   ) Validações de conteúdo
         (   ) Validações de autor
         (   ) Rotas de Cadastro / Atualização / Leitura  / Exclusão
+    }
     [   ] Organização de funções em pasta utils
-    
         (   ) Criar funções de busca e envio de dados diversas partes do projeto
         (   ) Criar funções para validações das requisições e respostas
 
@@ -48,5 +51,5 @@
     [   ] Ententender contexto
     [   ] Melhorar organização de pastas
     [   ] Enxugar componentes
-    [   ] 
+    [   ] Serarar funções para reaproveitamento de codigo.
         
