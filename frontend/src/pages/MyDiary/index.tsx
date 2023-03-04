@@ -1,11 +1,11 @@
-import { ContainerDiario } from "./Diario/ContainerDiario";
-import { Header } from "./Header/Header";
+import { ContainerDiario } from "../../components/Diario";
+import { Header } from "../../components/Header";
 import { DiarioContainer } from "./styles";
 
 export function Diario(){
     return(
         <>
-            <Header/>
+        <Header/>
         <DiarioContainer>
             <ContainerDiario/>
 

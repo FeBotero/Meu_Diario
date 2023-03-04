@@ -1,4 +1,4 @@
-import { Diario } from "./components/Diario"
+import { Diario } from "./pages/MyDiary"
 
 function App() {
 
