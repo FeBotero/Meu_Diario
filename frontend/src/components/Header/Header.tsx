@@ -1,15 +1,20 @@
 import profile from "../../assets/user16.svg"
-import { HeaderContainer } from "./styles"
+import { HeaderContainer, Profile } from "./styles"
 
 export function Header(){
     return(
 
         <HeaderContainer>
-        <h1>Meu querido diario</h1>  
+        <h1>Querido diario</h1>  
         {/* Logo do projeto acima */}
+        <input type="date" name="selectDay" id="selectDay" />
 
-        <p>Felipe Botero</p>
-        <img src={profile} alt="" />
+        <Profile>
+            <p>Felipe Botero</p>
+            <button>
+                <img src={profile} alt="" />
+            </button>
+        </Profile>
         </HeaderContainer>
     )
 }
