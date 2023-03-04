@@ -1,0 +1,6 @@
+export function Diario(){
+    return(
+        <>
+        </>
+    )
+}

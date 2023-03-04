@@ -1,7 +1,7 @@
-export function Diario(){
+export function ContainerDiario(){
     return(
         <>
-    
+
 
         </>
     )

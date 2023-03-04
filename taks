@@ -11,16 +11,24 @@
         (   ) Uso de Context
     [   ] Anotação
         (   ) Criação de Anotação.
+            (   ) O input de anotação só aparece se a data selecionada for igual a hoje.
+            (   ) Só é possivel salvar uma anotação se a data for igual a hoje.
         (   ) Edição de anotação.
+            (   ) Só é permitido alteração se a data da anotação for igual a hoje.
+            (   ) So apresenta a ferramenta de alteração se a data for igual a hoje.
         (   ) Exclusão de anotação.
         (   ) Exibição de anotação.
+            (   ) Será exibido todas as anotações referente ao dia selecionado.
         (   ) Type: {
                 createdAt,
-                content,
+                post:{
+                    title,
+                    content
+                },
             }
     [   ] Criação de Temas (Light / Dark)
         (   ) Uso de Context
-        (   ) Uso de Tailwind
+        (   ) Uso de Styled-components
         (   ) Uso de variaveis para cores
     [   ] Organização de funções em pasta utils
         (   ) Criar funções de busca e envio de dados diversas partes do projeto
