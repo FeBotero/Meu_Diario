@@ -1,3 +1,4 @@
+import { Home } from "./pages/Home"
 import { Diario } from "./pages/MyDiary"
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-        <Diario/>
+        <Home/>
         
     </div>
   )

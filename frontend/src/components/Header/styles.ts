@@ -26,3 +26,11 @@ export const Profile=styled.div`
         height:3rem
     }
 `
+
+export const HeaderUser = styled.div`
+    display:flex;
+    justify-content:space-between;
+`
+export const HeaderHome=styled.div`
+
+`

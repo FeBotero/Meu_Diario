@@ -1,15 +1,18 @@
+import { useState } from "react"
 import profile from "../../assets/user16.svg"
 import { getUser } from "../../utils/getUser"
-import { HeaderContainer, Profile } from "./styles"
+import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
 
 const getInfo:any = localStorage.getItem("user")
 export function Header(){
+    const [user,setUser]=useState()
     if(!getInfo){
 
         const userId = getInfo!=undefined?JSON.parse(getInfo).id:""
-        getUser(userId)
+        // const uReturn:any = getUser(userId)
+        // setUser(uReturn)
     }
-
+    
 
 
     return(
@@ -17,14 +20,30 @@ export function Header(){
         <HeaderContainer>
         <h1>Querido diario</h1>  
         {/* Logo do projeto acima */}
-        <input type="date" name="selectDay" id="selectDay" />
-
-        <Profile>
-            <p>Felipe Botero</p>
+        {
+            !user?<HeaderHome>
             <button>
-                <img src={profile} alt="" />
-            </button>
-        </Profile>
+                    Login
+                </button>
+            </HeaderHome>:
+            <HeaderUser>
+
+            <input type="date" name="selectDay" id="selectDay" />
+    
+            <Profile>
+                <p>Felipe Botero</p>
+                <button>
+                    <img src={profile} alt="" />
+                </button>
+            </Profile>
+            </HeaderUser>
+        }
+        
+
+        
+
+
+        
         </HeaderContainer>
     )
 }
