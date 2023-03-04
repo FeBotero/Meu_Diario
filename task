@@ -1,0 +1,52 @@
+[FRONTEND] = Typescript
+    [   ] Criação de usuário
+        (   ) Type:{
+            name,
+            email,
+            password(criptografia de senha)
+            }
+    [   ] Login
+        (   ) Token(jwt)
+        (   ) Armazenamento LocalStorage
+        (   ) Uso de Context
+    [   ] Anotação
+        (   ) Criação de Anotação.
+        (   ) Edição de anotação.
+        (   ) Exclusão de anotação.
+        (   ) Exibição de anotação.
+        (   ) Type: {
+                createdAt,
+                content,
+            }
+    [   ] Criação de Temas (Light / Dark)
+        (   ) Uso de Context
+        (   ) Uso de Tailwind
+        (   ) Uso de variaveis para cores
+    [   ] Organização de funções em pasta utils
+        (   ) Criar funções de busca e envio de dados diversas partes do projeto
+
+[BACKEND] = Typescript
+    [   ] Criação de Usuario
+        (   ) Type:{
+            name,
+            email,
+            password
+        }
+        (   ) Validação de Token
+            (   ) Controle de expiração de Token
+            (   ) Armazenamento em BD
+    [   ] Criação de anotação
+        (   ) Validações de conteúdo
+        (   ) Validações de autor
+        (   ) Rotas de Cadastro / Atualização / Leitura  / Exclusão
+    [   ] Organização de funções em pasta utils
+    
+        (   ) Criar funções de busca e envio de dados diversas partes do projeto
+        (   ) Criar funções para validações das requisições e respostas
+
+[OBJETIVOS]
+    [   ] Ententender contexto
+    [   ] Melhorar organização de pastas
+    [   ] Enxugar componentes
+    [   ] 
+        
