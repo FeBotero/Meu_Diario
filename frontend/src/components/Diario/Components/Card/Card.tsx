@@ -1,3 +1,5 @@
+import { CardConteiner, Title } from "./styles";
+
 interface Icard{
     title:string;
     content:string
@@ -5,10 +7,12 @@ interface Icard{
 
 export function Card({title,content}:Icard){
     return(
-        <>
-            <h2>Title</h2>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non illum corporis dolor temporibus eveniet accusantium quaerat voluptas, facilis autem. Ipsum non sapiente repellat laborum accusamus labore itaque exercitationem tempore ducimus?</p>
-        </>
+        <CardConteiner>
+            <Title>
+                <h2>{title}</h2>
+                <span>03/03/23 às 22:00</span>
+            </Title>
+            <p>{content}</p>
+        </CardConteiner>
     )
 }
