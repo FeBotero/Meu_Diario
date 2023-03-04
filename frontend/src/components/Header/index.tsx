@@ -1,7 +1,17 @@
 import profile from "../../assets/user16.svg"
+import { getUser } from "../../utils/getUser"
 import { HeaderContainer, Profile } from "./styles"
 
+const getInfo:any = localStorage.getItem("user")
 export function Header(){
+    if(!getInfo){
+
+        const userId = getInfo!=undefined?JSON.parse(getInfo).id:""
+        getUser(userId)
+    }
+
+
+
     return(
 
         <HeaderContainer>
