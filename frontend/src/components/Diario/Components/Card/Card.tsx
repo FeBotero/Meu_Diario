@@ -1,4 +1,9 @@
-export function Card(){
+interface Icard{
+    title:string;
+    content:string
+}
+
+export function Card({title,content}:Icard){
     return(
         <>
             <h2>Title</h2>
