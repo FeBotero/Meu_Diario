@@ -1,8 +1,8 @@
 import { CardConteiner, Title } from "./styles";
 
-interface Icard{
-    title:string;
-    content:string
+export interface Icard{
+    title?:string;
+    content?:string
 }
 
 export function Card({title,content}:Icard){

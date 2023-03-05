@@ -3,34 +3,41 @@ import profile from "../../assets/user16.svg"
 import { getUser } from "../../utils/getUser"
 import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
 
-const getInfo:any = localStorage.getItem("user")
-export function Header(){
+const getInfo = localStorage.getItem("user")
+interface Props {
+    onDateChange: (date: Date) => void;
+  }
+
+export function Header(props:Props){
     const [user,setUser]=useState()
-    if(!getInfo){
-
-        const userId = getInfo!=undefined?JSON.parse(getInfo).id:""
-        // const uReturn:any = getUser(userId)
-        // setUser(uReturn)
-    }
     
+    const [date, setDate] = useState<Date>(new Date());
 
+    function handleDateChange(event:any) {
+        const date = new Date(event.target.value);
+        setDate(date);
+        if (props.onDateChange) {
+          props.onDateChange(date);
+        }
+        
+      }   
 
+     
     return(
-
         <HeaderContainer>
-        <h1>Querido diario</h1>  
-        {/* Logo do projeto acima */}
+      
+          <h1>Querido diario</h1>  
+      
         {
-            !user?<HeaderHome>
-            <button>
-                    Login
-                </button>
-            </HeaderHome>:
+            user
+            ?
+            <HeaderHome>
+              <button>Login</button>
+            </HeaderHome>
+            :
             <HeaderUser>
-
-            <input type="date" name="selectDay" id="selectDay" />
-    
-            <Profile>
+              <input type="date" value={date.toISOString().substr(0, 10)} onChange={handleDateChange} />
+              <Profile>
                 <p>Felipe Botero</p>
                 <button>
                     <img src={profile} alt="" />
@@ -39,11 +46,7 @@ export function Header(){
             </HeaderUser>
         }
         
-
-        
-
-
-        
         </HeaderContainer>
     )
 }
+

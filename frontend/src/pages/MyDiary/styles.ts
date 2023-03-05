@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DiarioContainer=styled.body`
+export const DiarioContainer=styled.div`
 
 
 `

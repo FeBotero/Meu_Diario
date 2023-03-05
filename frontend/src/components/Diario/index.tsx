@@ -2,10 +2,22 @@ import { Card } from "./Components/Card";
 import { Form } from "./Components/Form";
 import { ContainerD } from "./styles";
 
-export function ContainerDiario(){
+interface Props{
+    day:Date|undefined
+}
+
+
+export function ContainerDiario(day:Props){
+    const daySelect = day.day
+    const exibitionDate = JSON.stringify(daySelect)
+
+    console.log(exibitionDate)
+
+
     return(
         <ContainerD>
             <Form/>
+            <p>{exibitionDate}</p>
             <Card title="Hoje é dia" content="testando aplicação"/>
 
 
