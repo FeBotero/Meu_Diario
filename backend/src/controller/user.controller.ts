@@ -1,4 +1,4 @@
-import mongoose, { ObjectId } from "mongoose"
+
 import service from "../service/user.service"
 import { Request, Response } from 'express';
 
@@ -15,17 +15,24 @@ async function readUserByID(req:Request,res:Response){
 }
 async function createUser(req:Request,res:Response){
     const body = req.body
+    const requiredFields = ["name","email","password","confirmPassword"]
     // name,email,password,confirmPassword
     // função que percorra o objeto body e confirm se esta vindo ou não o valor daquele atributo
-    const info = Object.keys(body)
 
-    info.forEach(info=>{
-        if(!body[info]||body[info]==undefined){
-            return res.status(400).json({message:`Erro no campo ${info}`})
-        }else{
+    if(requiredFields.some(field=>!body[field])){
+        return res.status(400).json({message:`Erro no campos do formulário`})
+    }
+
+    // const info = Object.keys(body)
+
+
+    // info.forEach(info=>{
+    //     if(!body[info]||body[info]==undefined){
+    //         return res.status(400).json({message:`Erro nos campos do formulario`})
+    //     }else{
             
-        }
-    })
+    //     }
+    // })
         await service.createUser(body)
     
 }
