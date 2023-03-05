@@ -13,8 +13,9 @@ export const CardConteiner=styled.div`
         display: flex;
         font-weight:light;
         font-size:large;
-        flex-wrap: wrap;
-
+        text-align: justify;
+        text-justify: inter-word;
+        padding:0.5rem;
     }
 
 `

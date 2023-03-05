@@ -18,7 +18,7 @@ export function Diary(day:Props){
         <ContainerD>
             <Form/>
             <p>{exibitionDate}</p>
-            <Card title="Hoje é dia" content="testando aplicação"/>
+            <Card  content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident beatae soluta quaerat, harum iste aliquam qui laudantium odio dolore, nemo repudiandae nostrum magnam! Minima tenetur doloribus laboriosam placeat rerum harum."/>
 
 
         </ContainerD>
