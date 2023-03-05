@@ -9,7 +9,9 @@ export function Form(){
         <FormContainer>
             
             <textarea placeholder="Três motivos para agradecer" onChange={e=>setContent(e.target.value)}/>
+            <div>
             <button>Salvar</button>
+                </div>
         </FormContainer>
     )
 }
