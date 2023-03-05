@@ -7,7 +7,7 @@ interface Props{
 }
 
 
-export function ContainerDiario(day:Props){
+export function Diary(day:Props){
     const daySelect = day.day
     const exibitionDate = JSON.stringify(daySelect)
 

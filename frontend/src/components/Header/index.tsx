@@ -2,6 +2,7 @@ import { useState } from "react"
 import profile from "../../assets/user16.svg"
 import { getUser } from "../../utils/getUser"
 import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
+import logo from "../../assets/logo.svg"
 
 const getInfo = localStorage.getItem("user")
 interface Props {
@@ -25,8 +26,16 @@ export function Header(props:Props){
       }   
     return(
         <HeaderContainer>
-      
-          <h1>Querido diario</h1>  
+          <div>
+
+          <img src={logo} alt="" />
+          <h1>uerido diario</h1>  
+          </div>
+
+          {user?
+          "":
+          <input type="date" value={date.toISOString().substr(0, 10)} onChange={handleDateChange} />
+          }
       
         {
             user
@@ -36,7 +45,8 @@ export function Header(props:Props){
             </HeaderHome>
             :
             <HeaderUser>
-              <input type="date" value={date.toISOString().substr(0, 10)} onChange={handleDateChange} />
+             
+             
               <Profile>
                 <p>Felipe Botero</p>
                 <button>

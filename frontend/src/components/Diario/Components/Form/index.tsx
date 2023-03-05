@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { FormContainer } from "./styles";
-import { Icard } from "../Card";
+
 
 export function Form(){
-    const [content,setContent]=useState<Icard>()
+    const [content,setContent]=useState<string>()
 
     return(
         <FormContainer>
-            <input type="text" placeholder="Titúlo" onChange={e=>setContent}/>
-            <textarea placeholder="Três motivos para agradecer"/>
+            
+            <textarea placeholder="Três motivos para agradecer" onChange={e=>setContent(e.target.value)}/>
             <button>Salvar</button>
         </FormContainer>
     )

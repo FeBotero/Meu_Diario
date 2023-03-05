@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ContainerDiario } from "../../components/Diario";
+import { Diary } from "../../components/Diario";
 import { Header } from "../../components/Header";
 import { DiarioContainer } from "./styles";
 
@@ -15,7 +15,7 @@ export function Diario(){
         <Header onDateChange={setState} />
         
         <DiarioContainer>
-            <ContainerDiario day={state}/>
+            <Diary day={state}/>
 
         </DiarioContainer>
 

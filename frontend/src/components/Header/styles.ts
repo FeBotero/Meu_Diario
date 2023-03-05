@@ -10,6 +10,13 @@ export const HeaderContainer=styled.div`
     input{
         height:2rem
     }
+   div{
+    display:flex;
+    align-items:center;
+    img{
+        height:2rem
+    }
+   }
     
 `
 export const Profile=styled.div`
