@@ -14,15 +14,15 @@ export function Header(props:Props){
     const [date, setDate] = useState<Date>(new Date());
 
     function handleDateChange(event:any) {
+        //Coleta a data e armazena em um estado desse componente
         const date = new Date(event.target.value);
         setDate(date);
+        //Passa para o Diario qual a data selecionada
         if (props.onDateChange) {
           props.onDateChange(date);
         }
         
       }   
-
-     
     return(
         <HeaderContainer>
       

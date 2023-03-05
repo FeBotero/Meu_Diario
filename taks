@@ -26,10 +26,19 @@
                     content
                 },
             }
-    [   ] Criação de Temas (Light / Dark)
+    [   ] Criação de Temas (Light / Dark / Diario)
         (   ) Uso de Context
         (   ) Uso de Styled-components
         (   ) Uso de variaveis para cores
+        (   ) Light{
+                Cores voltadas para o azul claro, e tons turqueza
+        }
+        (   ) Dark{
+                Cores voltadas para o preto, roxo e lilas
+        }
+        (   ) Diario{
+                Cores voltadas para amarelo, rose e laranja
+        }
     [   ] Organização de funções em pasta utils
         (   ) Criar funções de busca e envio de dados diversas partes do projeto
 
