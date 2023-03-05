@@ -5,12 +5,22 @@ export const CardConteiner=styled.div`
     flex-direction:column;
     background-color:grey;
     width:30%;
-    margin-top:0.5rem
+    margin-top:0.5rem;
+    padding:0.5rem;
+    border-radius:0.5rem;
 
+    p{
+        display: flex;
+        font-weight:light;
+        font-size:large;
+        flex-wrap: wrap;
+
+    }
 
 `
 export const Title=styled.div`
     display:flex;
-    align-items:center;
-    gap:0.5rem
+    justify-content: flex-end;
+    gap:0.5rem;
+    font-weight:bold;
 `
