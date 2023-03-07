@@ -1,12 +1,18 @@
-import { Home } from "./pages/Home"
-import { Diario } from "./pages/MyDiary"
+import { Header } from "./components/Header"
+import { Outlet } from "react-router-dom"
+import { useState } from "react";
+import "./App.css"
 
 function App() {
+  const [state, setState] = useState<Date>();
+
+  // como fazer para enviar o metodo setDay para o header
 
 
   return (
     <div className="App">
-        <Diario/>
+      <Header onDateChange={setState} />
+        <Outlet/>
         
     </div>
   )

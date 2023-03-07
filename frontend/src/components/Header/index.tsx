@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import profile from "../../assets/user16.svg"
 import { getUser } from "../../utils/getUser"
 import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
 import logo from "../../assets/logo.svg"
-
+import { Link } from "react-router-dom"
+import { ThemeContext } from "../../context/ThemeContext"
 const getInfo = localStorage.getItem("user")
 interface Props {
     onDateChange: (date: Date) => void;
@@ -13,6 +14,10 @@ export function Header(props:Props){
     const [user,setUser]=useState()
     
     const [date, setDate] = useState<Date>(new Date());
+
+  const {theme,toggleTheme}:any = useContext(ThemeContext)
+
+
 
     function handleDateChange(event:any) {
         //Coleta a data e armazena em um estado desse componente
@@ -26,10 +31,12 @@ export function Header(props:Props){
       }   
     return(
         <HeaderContainer>
-          <div>
+          <div className={theme==="dark"?"dark-theme":""}>
 
           <img src={logo} alt="" />
           <h1>uerido diario</h1>  
+          <button onClick={toggleTheme}>Toggle</button>
+          <p>O tema atual é :{theme}</p>
           </div>
 
           {user?
@@ -48,10 +55,10 @@ export function Header(props:Props){
              
              
               <Profile>
-                <p>Felipe Botero</p>
-                <button>
+                <Link to={"/"}><p>Felipe Botero</p></Link>
+                <Link to={"/diary"}><button>
                     <img src={profile} alt="" />
-                </button>
+                </button></Link>
             </Profile>
             </HeaderUser>
         }
