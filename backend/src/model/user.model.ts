@@ -5,6 +5,7 @@ export interface Iuser extends Document{
     email:string,
     password:string,
     confirmPassword?:string
+    createdAt?:string
 }
 
 
@@ -20,6 +21,13 @@ const User:Schema = new mongoose.Schema({
     password:{
         type:String,
         require:true
+    },
+    access_token: {
+        type: String, 
+    },
+    createdAt:{ 
+        type: String, 
+        require: true 
     }
 })
 

@@ -2,7 +2,7 @@ import User,{Iuser} from "../model/user.model"
 import mongoose from "mongoose";
 
 function findAllUser(){
-    User.find().select(
+    return User.find().select(
         "_id name"
     )
 }
