@@ -3,7 +3,7 @@ import service from "../service/user.service"
 import { Request, Response } from 'express';
 import bcrypt from "bcrypt"
 import { Iuser } from "model/user.model";
-import { validateUser } from "utils/validateCreateUser";
+// import { validateUser } from "utils/validateCreateUser";
 
 
 
@@ -29,8 +29,8 @@ async function createUser(req:Request,res:Response){
     const body = req.body
     const requiredFields = ["name","email","password","confirmPassword"]
     
-    const mess = validateUser(body.name)
-    console.log(mess)
+    // const mess = validateUser(body.name)
+    // console.log(mess)
 
     // if(requiredFields.some(field=>!body[field])){
     //     return res.status(400).json({message:`Erro no campos do formulário`})

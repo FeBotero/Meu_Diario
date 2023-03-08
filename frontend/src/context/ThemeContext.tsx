@@ -14,14 +14,17 @@ export const ThemeContextProvider= ({children}:ThemeContextProps)=>{
     const [theme,setTheme]=useState("light")
 
     const toggleTheme=()=>{
-        setTheme(theme==="light"?"dark":"light")
+        const newValue = theme==="light"?"dark":"light"
+        setTheme(newValue)
+
+        localStorage.setItem("theme",newValue)
     }
 
 
     return(
         <ThemeContext.Provider value={{theme,toggleTheme}}>
-            <ThemeProvider theme={theme==="light"?DefaultTheme:DarkTheme}>
-            {children}
+            <ThemeProvider theme={theme==="light"? DefaultTheme : DarkTheme}>
+                {children}
             </ThemeProvider>
         </ThemeContext.Provider>
 
