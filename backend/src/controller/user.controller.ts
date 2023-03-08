@@ -2,7 +2,8 @@
 import service from "../service/user.service"
 import { Request, Response } from 'express';
 import bcrypt from "bcrypt"
-import { Iuser } from "model/user.model";
+import userModel, { Iuser } from "model/user.model";
+import { validLogin, validUser } from "utils/validateCreateUser";
 // import { validateUser } from "utils/validateCreateUser";
 
 
@@ -14,6 +15,10 @@ interface Irequest{
   
   }
 
+  const auth = {  
+    expires: '24h',
+  };
+  
 
 
 async function readAllUser(req:Irequest,res:Response){
@@ -67,6 +72,26 @@ async function deleteUser(req:Request,res:Response){
 }   
 
 
+async function loginUser(req:Request,res:Response){
+    
+
+    try{
+        const {email,password} = req.body;
+        return res.status(400).json(validLogin(email,password));
+
+        // const user = await userModel.findOne({email}).exec()
+        // return res.status(400).json(validUser(user))
+
+    }catch(erro){
+        console.log(erro);
+
+        res.status(500).json({
+          message: "Aconteceu algo no servidor, tente novamente mais tarde.",
+        });
+      }
+
+}
+
 
 
 export default{    
@@ -74,5 +99,6 @@ export default{
     readUserByID,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    loginUser
 }

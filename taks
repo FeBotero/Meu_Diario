@@ -9,8 +9,8 @@
         (   ) Token(jwt)
         (   ) Armazenamento LocalStorage
         (   ) Uso de Context
-    [   ] Anotação
-        (   ) Criação de Anotação.
+    [X] Anotação
+        (X) Criação de Anotação.
             (   ) O input de anotação só aparece se a data selecionada for igual a hoje.
             (   ) Só é possivel salvar uma anotação se a data for igual a hoje.
         (   ) Edição de anotação.

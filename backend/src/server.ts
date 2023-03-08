@@ -2,21 +2,24 @@ import express,{Request,Response} from "express"
 import cors from "cors";
 import "dotenv/config"
 import userRoutes from "./routes/user.routes"
+import DB from "./db/db.helpers"
 
 const secret = process.env.SECRET
+const app = express()
 
 async function main(){
 
-const app = express()
+await DB.connectDB()
 
+app.use(cors())
+app.use(express.json())
+app.use("/user",userRoutes)
 
 app.get('/',function(req:Request,res:Response){
     res.send("Olá Brasil!!")
 })
 
-app.use(cors())
-app.use(express.json())
-app.use("/user",userRoutes)
+
 
 
 

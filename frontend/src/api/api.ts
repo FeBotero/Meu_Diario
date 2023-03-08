@@ -3,12 +3,12 @@ import axios from "axios"
 
 
 const api = axios.create({
-    baseURL:"https://mfacil.onrender.com",
+    baseURL:"",
     headers:{
         "Content-Type":"application/json"
     }
 })
-"https://mfacil.onrender.com"
+
 
 
 export const apiService = {
