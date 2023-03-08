@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   }
 ])
 
-import { ThemeProvider } from './context/ThemeContext'
+import { ThemeContextProvider } from './context/ThemeContext'
 import { UserProvider } from './context/UserContext'
 import { DateProvider } from './context/DateContext'
 
@@ -29,12 +29,12 @@ import { DateProvider } from './context/DateContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider >
+    <ThemeContextProvider >
       <UserProvider>
         <DateProvider>
           <RouterProvider router={router}/>
         </DateProvider>
       </UserProvider>
-    </ThemeProvider>
+    </ThemeContextProvider>
   </React.StrictMode>,
 )

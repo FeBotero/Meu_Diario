@@ -1,4 +1,7 @@
 import { ReactNode, createContext,useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { DefaultTheme } from "../styles/themes/DefaultTheme";
+import { DarkTheme } from "../styles/themes/DarkTheme";
 
 type ThemeContextProps = {
     children:ReactNode
@@ -7,7 +10,7 @@ type ThemeContextProps = {
 
 export const ThemeContext = createContext("light")
 
-export const ThemeProvider = ({children}:ThemeContextProps)=>{
+export const ThemeContextProvider= ({children}:ThemeContextProps)=>{
     const [theme,setTheme]=useState("light")
 
     const toggleTheme=()=>{
@@ -17,7 +20,9 @@ export const ThemeProvider = ({children}:ThemeContextProps)=>{
 
     return(
         <ThemeContext.Provider value={{theme,toggleTheme}}>
+            <ThemeProvider theme={theme==="light"?DefaultTheme:DarkTheme}>
             {children}
+            </ThemeProvider>
         </ThemeContext.Provider>
 
     )
