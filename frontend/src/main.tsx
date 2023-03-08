@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 
@@ -21,12 +21,20 @@ const router = createBrowserRouter([
 ])
 
 import { ThemeProvider } from './context/ThemeContext'
+import { UserProvider } from './context/UserContext'
+import { DateProvider } from './context/DateContext'
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider >
-      <RouterProvider router={router}/>
+      <UserProvider>
+        <DateProvider>
+          <RouterProvider router={router}/>
+        </DateProvider>
+      </UserProvider>
     </ThemeProvider>
   </React.StrictMode>,
 )
