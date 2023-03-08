@@ -14,8 +14,13 @@ export const HeaderContainer=styled.div`
     display:flex;
     align-items:center;
     img{
-        height:2rem
+        height:2rem;
+        
+        
     }
+    
+        
+    
    }
     
 `

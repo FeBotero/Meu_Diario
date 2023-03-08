@@ -4,15 +4,11 @@ import { Form } from "./Components/Form";
 import { ContainerD } from "./styles";
 import { dateContext } from "../../context/DateContext";
 
-interface Props{
-    day:Date|undefined
-}
-
 
 export function Diary(){
     const { date } = useContext(dateContext);
-    const dateSelect = date
-    console.log(dateSelect)
+    
+    
 
     return(
         <ContainerD>

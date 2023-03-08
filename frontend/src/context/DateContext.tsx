@@ -4,17 +4,13 @@ type dateContextProps = {
     children:ReactNode
 }
 
-const dateNow = new Date()
-
-export const dateContext = createContext<any>(null)
+export const dateContext = createContext<any>({
+    date:new Date(),
+    toogleDate:()=>{},
+})
 
 export const DateProvider = ({children}:dateContextProps)=>{
-    const [date,setDate]=useState()
-
-    // const toggledate=(e:any)=>{
-    //     setdate(e.target.value)
-    // }
-
+    const [date,setDate]=useState(new Date())
 
     return(
         <dateContext.Provider value={{date,setDate}}>

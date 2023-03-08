@@ -8,13 +8,11 @@ import { ThemeContext } from "../../context/ThemeContext"
 import { dateContext } from "../../context/DateContext"
 import { UserContext } from "../../context/UserContext"
 const getInfo = localStorage.getItem("user")
-interface Props {
-    onDateChange: (date: Date) => void;
-  }
 
-export function Header(props:Props){  
+
+export function Header(){  
   const { date, setDate } = useContext(dateContext)  
-  const [dateSelect, setDateSelect] = useState<Date>(new Date());
+  
 
     const {toggleTheme}:any = useContext(ThemeContext)
 
