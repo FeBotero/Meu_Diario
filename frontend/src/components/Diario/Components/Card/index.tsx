@@ -4,12 +4,14 @@ export interface Icard{
     content:string
 }
 
-export function Card({content}:Icard){
+export function Card({content,refreshPost}:any){
+
+
+
     return(
         <CardConteiner>
             <Title>
-                
-                <span>03/03/23 às 22:00</span>
+                {/* <span>03/03/23 às 22:00</span> */}
             </Title>
             <p>{content}</p>
         </CardConteiner>

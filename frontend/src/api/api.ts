@@ -1,7 +1,8 @@
 import axios from "axios"
+import { Tpost } from "../types/types"
 
 const api = axios.create({
-    baseURL:"",
+    baseURL:"http://localhost:3333",
     headers:{
         "Content-Type":"application/json"
     }
@@ -42,10 +43,10 @@ export const apiService = {
         readByIdURL:function(id:any){
             return api.get("/post/"+id)
         },
-        readByUserID:function(id:any){
-            return api.get("/post/",id)
+        readByUserID:function(body:any){
+            return api.post("/post/postsUser",body)
         },
-        createURL:function(body:any){
+        createURL:function(body:Tpost){
             return api.post("/post",body)
         },
         

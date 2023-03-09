@@ -34,11 +34,8 @@ async function findByUserId(req:Irequest,res:Response){
   const postFilter = posts.filter(
     (post)=>
     post.author?.toString()=== author &&post.createdAt&&
-    new Date(post.createdAt).toDateString()===date.toDateString()
+    (post.createdAt)===date
   )
-
-  
-  //Buscar os post do dia
 
   res.send(postFilter)
 }

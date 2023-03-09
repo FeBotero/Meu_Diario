@@ -63,12 +63,7 @@ export function Register(){
         <S.Container>
             <img src="" alt="" />
             <S.content>
-                <S.Header>
-                    
-                    <h4>Vamos embarcar?</h4>
-                    <h2>Ieasy</h2>
-
-                </S.Header>
+                
                 <S.Form>
                 
                 <form >  

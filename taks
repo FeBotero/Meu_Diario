@@ -1,13 +1,13 @@
 [FRONTEND] = Typescript
     [   ] Criação de usuário
-        (   ) Type:{
+        (X) Type:{
             name,
             email,
             password(criptografia de senha)
             }
     [   ] Login
-        (   ) Token(jwt)
-        (   ) Armazenamento LocalStorage
+        (X) Token(jwt)
+        (X) Armazenamento LocalStorage
         (   ) Uso de Context
     [X] Anotação
         (X) Criação de Anotação.
@@ -19,24 +19,20 @@
         (   ) Exclusão de anotação.
         (   ) Exibição de anotação.
             (   ) Será exibido todas as anotações referente ao dia selecionado.
-        (   ) Type: {
+        (X) Type: {
                 createdAt,
-                post:{
-                    title,
-                    content
+                content,
+                author
                 },
             }
-    [   ] Criação de Temas (Light / Dark / Diario)
-        (   ) Uso de Context
-        (   ) Uso de Styled-components
+    [   ] Criação de Temas (Light / Dark /)
+        (X) Uso de Context
+        (X) Uso de Styled-components
         (   ) Uso de variaveis para cores
-        (   ) Light{
-                Cores voltadas para o azul claro, e tons turqueza
-        }
         (   ) Dark{
                 Cores voltadas para o preto, roxo e lilas
         }
-        (   ) Diario{
+        (   ) Light{
                 Cores voltadas para amarelo, rose e laranja
         }
     [   ] Organização de funções em pasta utils
@@ -44,7 +40,7 @@
 
 [BACKEND] = Typescript
     [   ] Criação de Usuario
-        (   ) Type:{
+        (X) Type:{
             name,
             email,
             password
@@ -53,7 +49,7 @@
             (   ) Controle de expiração de Token
             (   ) Armazenamento em BD
     [   ] Criação de anotação
-        (   ) Type:{
+        (X) Type:{
             content,
             author,
         (   ) Validações de conteúdo
@@ -65,7 +61,7 @@
         (   ) Criar funções para validações das requisições e respostas
 
 [OBJETIVOS]
-    [   ] Ententender contexto
+    [X] Ententender contexto
     [   ] Melhorar organização de pastas
     [   ] Enxugar componentes
     [   ] Serarar funções para reaproveitamento de codigo.

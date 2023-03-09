@@ -10,8 +10,9 @@ export type Tuser = {
 
 
 export type Tpost={
-    author:String;
-    content:String;
+    author:string;
+    content:string;
+    createdAt?:String
     map?:Array<Object>
 }
 export type TImageUser={
