@@ -1,7 +1,5 @@
 import axios from "axios"
 
-
-
 const api = axios.create({
     baseURL:"",
     headers:{
@@ -43,6 +41,9 @@ export const apiService = {
         },
         readByIdURL:function(id:any){
             return api.get("/post/"+id)
+        },
+        readByUserID:function(id:any){
+            return api.get("/post/",id)
         },
         createURL:function(body:any){
             return api.post("/post",body)

@@ -5,7 +5,7 @@ export interface Iuser extends Document{
     email:string,
     password:string,
     confirmPassword?:string
-    createdAt?:string
+    createdAt:string
 }
 
 

@@ -69,7 +69,7 @@ async function createUser(req:Irequest,res:Response){
     const passwordHash = await bcrypt.hash(password, salt);
 
 
-    const newUser =  new User({
+    const newUser = new User({
       name:name,
       email:email,
       password: passwordHash,
