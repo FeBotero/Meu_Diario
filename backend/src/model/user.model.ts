@@ -5,7 +5,7 @@ export interface Iuser extends Document{
     email:string,
     password:string,
     confirmPassword?:string
-    createdAt:string
+    createdAt:Date
 }
 
 
@@ -26,7 +26,7 @@ const User:Schema = new mongoose.Schema({
         type: String, 
     },
     createdAt:{ 
-        type: String, 
+        type: Date, 
         require: true 
     }
 })

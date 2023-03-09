@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 export interface IPost{
     author:String;
     content:String;
-    createdAt:string
+    date:Date
 }
 
 const postSchemna = new mongoose.Schema({

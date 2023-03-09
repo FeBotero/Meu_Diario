@@ -25,6 +25,26 @@ async function findById(req:Irequest,res:Response){
     const post = await service.findByIdPost(id)
     res.send(post)
 }
+async function findByUserId(req:Irequest,res:Response){
+  const {author,date} = req.body
+  if (!isObjectIdValid(author)) {
+      return res.status(404).json({ message: "ID inválido!" });
+    }
+  const posts = await service.findAllPosts()
+  const postFilter = posts.filter(
+    (post)=>
+    post.author?.toString()=== author &&post.createdAt&&
+    new Date(post.createdAt).toDateString()===date.toDateString()
+  )
+
+  
+  //Buscar os post do dia
+
+  res.send(postFilter)
+}
+
+
+
 async function create(req:Irequest,res:Response){
     const body = req.body
     const post = await service.createPost(body)
@@ -53,4 +73,5 @@ export default {
     create,
     updateById,
     deleteByID,
+    findByUserId
 }
