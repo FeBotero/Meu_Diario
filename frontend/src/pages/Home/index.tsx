@@ -1,4 +1,4 @@
-import nuvem from "../../assets/Nuvem.png"
+import nuvem from "../../assets/Nuvem.svg"
 import { HomeContainer } from "./styles"
 
 

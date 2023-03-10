@@ -14,20 +14,19 @@ export const Container = styled.div`
     }
 
 
-    @media  (max-width:700px){
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-
-        img{
-            height:15rem
-        }
-        button{
-            width:15rem
-        }
+    @media only screen and (max-width: 768px) {
+    h2 {
+      
+      margin-top: 2rem;
+      text-align: center;
+    }
+    div{
+        height:50%;
+        margin-inline:0.5rem;
     }
 
+}
+    
 
 
 

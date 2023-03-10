@@ -6,7 +6,7 @@ import logo from "../../assets/logo.svg"
 import { ThemeContext } from "../../context/ThemeContext"
 import { dateContext } from "../../context/DateContext"
 import { UserContext } from "../../context/UserContext"
-import { useNavigate } from "react-router-dom"
+import { useNavigate,Link } from "react-router-dom"
 import { Moon, Sun} from "@phosphor-icons/react";
 
 const getInfo:any = localStorage.getItem("user")
@@ -56,8 +56,8 @@ export function Header(){
         <HeaderContainer>
           <div >
 
-          <img src={logo} alt="" />
-          <h1>uerido diario</h1>  
+         <Link to="/"> <img src={logo} alt="" />
+          <h1>uerido diario</h1>  </Link>
          
           
           </div>
@@ -72,7 +72,7 @@ export function Header(){
             ?
             <HeaderHome>
                <button className="toggle" onClick={toggleTheme}>{theme=="light"?<Moon size={32} />:<Sun size={32} />}</button>
-                  <button className="login" onClick={Login} >Login</button>
+              <button className="login" onClick={Login} >Login</button>
               
             </HeaderHome>
             :

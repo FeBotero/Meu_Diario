@@ -11,6 +11,7 @@ export const HomeContainer = styled.div`
         z-index:9999;
         color:#b79457;
         font-family: 'Shantell Sans', cursive;
+        text-align: center;
     }
     img{
         margin-top:-10rem;
@@ -18,5 +19,18 @@ export const HomeContainer = styled.div`
         positon:absolute;
         
     }
+
+    @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+      margin-top: 5rem;
+      text-align: center;
+    }
+
+    img {
+      width: 90%;
+      margin-top: -8rem;
+    }
+  }
 
 `

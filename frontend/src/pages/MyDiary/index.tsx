@@ -15,8 +15,7 @@ export function Diario(){
     
 
     return(
-        <div>
-        <h1>Diario</h1>
+        
         
         <DiarioContainer>
             <Diary />
@@ -24,6 +23,5 @@ export function Diario(){
         </DiarioContainer>
 
        
-        </div>
     )
 }
