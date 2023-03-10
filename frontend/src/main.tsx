@@ -34,7 +34,6 @@ import { DateProvider } from './context/DateContext'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeContextProvider >
-      
         <UserProvider>
           <DateProvider>
             <RouterProvider router={router}/>

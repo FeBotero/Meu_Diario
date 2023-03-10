@@ -1,76 +1,91 @@
 import { useContext, useState } from "react"
-import profile from "../../assets/user16.svg"
-import { getUser } from "../../utils/getUser"
+
 import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
 import logo from "../../assets/logo.svg"
-import { Link } from "react-router-dom"
+
 import { ThemeContext } from "../../context/ThemeContext"
 import { dateContext } from "../../context/DateContext"
 import { UserContext } from "../../context/UserContext"
 import { useNavigate } from "react-router-dom"
+import { Moon, Sun} from "@phosphor-icons/react";
 
-const getInfo = localStorage.getItem("user")
+const getInfo:any = localStorage.getItem("user")
 
 
 export function Header(){  
+
   const navigate = useNavigate()
-  const [data,setData]=useState<Date>()
+
 
   const { setDate } = useContext(dateContext)  
   
 
-    const {toggleTheme}:any = useContext(ThemeContext)
+    const {theme,toggleTheme}:any = useContext(ThemeContext)
 
-    const{user,toggleUser}:any = useContext(UserContext)
+    // const{user,toggleUser}:any = useContext(UserContext)
+    const user = JSON.parse(getInfo)
+
 
     function handleDateChange(newDate:Date) {
         
 
-        // const newDateTime = new Date(newDate.toUTCString())
-
-        // // const newValue = new Date(newDateTime.setMinutes(newDateTime.getMinutes()+new Date().getTimezoneOffset()))
 
 
-        // // setDate(new Date(newDateValue.))
-        console.log(new Date(newDate.setUTCDate(0)))
+
+        
+        
+        console.log(` Data atual ${newDate}`)
+       
+        setDate(newDate)
+    
+       
       }   
   
       function Login(){
         navigate("/login")
+        window.location.href=window.location.href
       }
-      // 
+      
+      function LogOut(){
+        // toggleUser()
+        localStorage.removeItem("user")
+        navigate("/")
+        window.location.href=window.location.href
+        navigate("/")
+      }
 
-      // {e=>setData(new Date(e.target.value))}
     return(
         <HeaderContainer>
           <div >
 
           <img src={logo} alt="" />
           <h1>uerido diario</h1>  
-          <button onClick={toggleTheme}>Toggle</button>
+         
           
           </div>
 
-          {user?
+          {!user?
           "":
-          <input type="date"  onChange={e=>handleDateChange(new Date(e.target.value))} />
+          <input type="datetime-local"   onChange={e=>handleDateChange(new Date(e.target.value))} />
           }
       
         {
             !user
             ?
             <HeaderHome>
-              <button onClick={Login} >Login</button>
+               <button className="toggle" onClick={toggleTheme}>{theme=="light"?<Moon size={32} />:<Sun size={32} />}</button>
+                  <button className="login" onClick={Login} >Login</button>
+              
             </HeaderHome>
             :
             <HeaderUser>
              
              
               <Profile>
-                <Link to={"/"}><p>Felipe Botero</p></Link>
-                <Link to={"/diary"}><button>
-                    <img src={profile} alt="" />
-                </button></Link>
+              <button className="toggle" onClick={toggleTheme}>{theme=="light"?<Moon size={32} />:<Sun size={32} />}</button>
+                <div>
+                <button className="login" onClick={LogOut} >Logout</button>
+                </div>
             </Profile>
             </HeaderUser>
         }

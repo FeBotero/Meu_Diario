@@ -57,6 +57,7 @@ export const Form=styled.div`
         display:flex;
         flex-direction:column;
         gap:0.5rem;
+        margin-top: 1rem;
     }
     button{
         padding:0.5rem;
@@ -74,19 +75,19 @@ export const Form=styled.div`
         color:white;
         transition:all 0.5s
     }
-
-
     div{
         background-color:#ECECEC;
         width:18rem;
         height:2.5rem;
-        border-radius:0.5rem
+        border-radius:0.5rem;
         
     }
     input{
         background:transparent;
         padding:0.3rem;
         width: 100%;
-        font-size:large
+        font-size:large;
+        border:0;
+        outline:0;
     }
 `

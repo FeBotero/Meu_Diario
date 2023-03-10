@@ -25,26 +25,18 @@ export function Diary(){
             
         }setPosts(request.data)
     }
-    console.log(date)
-    const now= new Date()
-    const todayYear = now.getFullYear()
-    const todayMonth = now.getMonth()
-    const todayDay = now.getDay()
-    const dateYear = date.getFullYear()
-    const dateMonth = date.getMonth()
-    const dateDay = date.getDay()
 
-    
+    const newDate = JSON.stringify(Intl.DateTimeFormat('pt-BR').format(date))
 
-
-
+    //Passado o date dentro do useEffect para atualizar sempre que a data alterar
     useEffect(()=>{
         getPostUser()
-    },[])
+    },[date])
+
 
     return(
         <ContainerD>
-            {/* {todayYear==dateYear &&todayMonth==dateMonth&&todayDay==dateDay?<Form refreshPost={getPostUser}/>:""} */}
+            {newDate?<Form refreshPost={getPostUser}/>:""}
             <h1>Diário de {date? date.toLocaleDateString():""}</h1>
             {
                 posts.map((post:Tpost,index:number)=>(

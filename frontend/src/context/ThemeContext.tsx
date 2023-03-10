@@ -1,32 +1,27 @@
-import { ReactNode, createContext,useState } from "react";
-import { ThemeProvider } from "styled-components";
-import { DefaultTheme } from "../styles/themes/DefaultTheme";
-import { DarkTheme } from "../styles/themes/DarkTheme";
+import {createContext,ReactNode, useState} from "react"
 
-type ThemeContextProps = {
+type ThemeContextProps={
     children:ReactNode
+}
+type ThemeContextType={
+    theme:string,
+    setTheme:(newState:string)=>void
+}
+
+const initialValue={
+    theme:"light",
+    setTheme:()=>{}
 }
 
 
-export const ThemeContext = createContext("light")
+export const ThemeContext = createContext<ThemeContextType>(initialValue)
 
-export const ThemeContextProvider= ({children}:ThemeContextProps)=>{
-    const [theme,setTheme]=useState("light")
-
-    const toggleTheme=()=>{
-        const newValue = theme==="light"?"dark":"light"
-        setTheme(newValue)
-
-        localStorage.setItem("theme",newValue)
-    }
-
-
+export const ThemeContextProvider = ({children}:ThemeContextProps)=>{
+    
+    const [theme,setTheme] = useState(initialValue.theme)
     return(
-        <ThemeContext.Provider value={{theme,toggleTheme}}>
-            <ThemeProvider theme={theme==="light"? DefaultTheme : DarkTheme}>
-                {children}
-            </ThemeProvider>
+        <ThemeContext.Provider value={{theme,setTheme}}>
+            {children}
         </ThemeContext.Provider>
-
     )
 }

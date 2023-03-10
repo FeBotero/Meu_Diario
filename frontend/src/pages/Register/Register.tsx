@@ -63,7 +63,7 @@ export function Register(){
         <S.Container>
             <img src="" alt="" />
             <S.content>
-                
+                <h2>Vamos iniciar essa história juntos?</h2>
                 <S.Form>
                 
                 <form >  
@@ -82,7 +82,7 @@ export function Register(){
                     </div>
                         
                     
-                    <button onClick={registerUser}>Sing in</button>
+                    <button onClick={registerUser}>Sing Up</button>
                 </form>
                 <p>Já tem cadastro? </p>
                 <Link to="/login" >Login</Link>

@@ -51,7 +51,7 @@ export const Header=styled.div`
 export const Form=styled.div`
         display: flex;
         flex-direction:column;
-
+        margin-top:1rem;
         align-items:center;
     form{
         display:flex;
@@ -87,6 +87,8 @@ export const Form=styled.div`
         background:transparent;
         padding:0.3rem;
         width: 100%;
-        font-size:large
+        font-size:large;
+        border:0;
+        outline:0;
     }
 `

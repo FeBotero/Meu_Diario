@@ -2,15 +2,18 @@
 import * as S from "./styles"
 
 // import LoginImage from "../../assets/login.svg"
-import { useState,useEffect } from "react"
+import { useState,useContext } from "react"
 import { apiService } from "../../api/api"
 import { Link, useNavigate } from "react-router-dom"
+import { UserContext } from "../../context/UserContext"
 
 
 
 export function Login(){
     const[email,setEmail]=useState<String>("")
     const[password,setPassword]=useState<String>("")
+    const{user,toggleUser}:any = useContext(UserContext)
+
     
 
     interface IUser{
@@ -34,9 +37,10 @@ export function Login(){
         
         if(request.status==200){
             localStorage.setItem("user",JSON.stringify(data))
-            
-            navigate("/feed")
-            window.location.href=window.location.href
+          
+            toggleUser(data.id)
+            navigate("/diary")
+
         }
     }
 
@@ -44,22 +48,18 @@ export function Login(){
         <S.Container>
             <img src="" alt="" />
             <S.content>
-                
+                <h2>Seja bem vindo ao seu lugar</h2>
                 <S.Form>
-                
-                <form >  
-                    
-                    <div className="inputView">
-                   
-                    <input type="email"id="userName" placeholder=" Email" onChange={e=>setEmail(e.target.value)}/>
-                    </div>
-                    <div className="inputView">
-                    
-                    <input type="password" id="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
-                    </div>
-                        
-                    
-                    <button onClick={loginUser}>Log in</button>
+                    <form >  
+                        <div >
+
+                        <input type="email"id="userName" placeholder=" Email" onChange={e=>setEmail(e.target.value)}/>
+                        </div>
+                        <div >
+
+                        <input type="password" id="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+                        </div>
+                        <button onClick={loginUser}>Log in</button>
                 </form>
                 <p>Ainda não tem cadastro? </p>
                 <Link to="/register" >Registrar</Link>
