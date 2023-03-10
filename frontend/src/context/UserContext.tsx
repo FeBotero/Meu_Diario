@@ -19,15 +19,15 @@ export const UserContext = createContext({})
 export const UserProvider = ({children}:UserContextProps)=>{
     const [user,setUser]=useState(null)
 
-    const toggleUser=()=>{
-        const newValue = ""
-        setUser(newValue)
-        // user ===userLogged.id?"":userLogged.id
-    }
+    // const toggleUser=()=>{
+    //     const newValue = ""
+    //     setUser(newValue)
+    //     // user ===userLogged.id?"":userLogged.id
+    // }
 
 
     return(
-        <UserContext.Provider value={{user,toggleUser}}>
+        <UserContext.Provider value={{user,setUser}}>
             {children}
         </UserContext.Provider>
 

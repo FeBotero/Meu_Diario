@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState,useEffect } from "react"
 
 import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
 import logo from "../../assets/logo.svg"
@@ -13,7 +13,7 @@ const getInfo:any = localStorage.getItem("user")
 
 
 export function Header(){  
-
+  const [selectUser,setSelectUser]=useState()
   const navigate = useNavigate()
 
 
@@ -22,23 +22,13 @@ export function Header(){
 
     const {theme,toggleTheme}:any = useContext(ThemeContext)
 
-    // const{user,toggleUser}:any = useContext(UserContext)
-    const user = JSON.parse(getInfo)
+    const{user,setUser}:any = useContext(UserContext)
+    // const userInfo = JSON.parse(getInfo)
 
 
-    function handleDateChange(newDate:Date) {
-        
-
-
-
-
-        
-        
+    function handleDateChange(newDate:Date) {      
         console.log(` Data atual ${newDate}`)
-       
         setDate(newDate)
-    
-       
       }   
   
       function Login(){
@@ -47,12 +37,21 @@ export function Header(){
       }
       
       function LogOut(){
-        // toggleUser()
+        setUser()
         localStorage.removeItem("user")
         navigate("/")
         window.location.href=window.location.href
         navigate("/")
       }
+      function getUser(){
+        console.log(user)
+        setSelectUser(user)
+      }
+
+      useEffect(()=>{
+        getUser()
+      },[user])
+
 
     return(
         <HeaderContainer>

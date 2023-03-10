@@ -5,14 +5,15 @@ import { ContainerD } from "./styles";
 import { dateContext } from "../../context/DateContext";
 import { apiService } from "../../api/api";
 import { Tpost } from "../../types/types";
-
+import { UserContext } from "../../context/UserContext"
 
 export function Diary(){
     const { date } = useContext(dateContext);
+    const{user}:any = useContext(UserContext)
     const [posts,setPosts]=useState<Tpost[]>([])
     
     const payload={
-        author:"640930a8f401801ce18d19b7",
+        author:user,
         date:Intl.DateTimeFormat('pt-BR').format(date)
     }
 

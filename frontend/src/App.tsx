@@ -4,10 +4,8 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
-  const day = new Date()
-  const [state, setState] = useState<Date>(day);
 
-  // como fazer para enviar o metodo setDay para o header
+  
   const {theme}:any=useContext(ThemeContext)
   
   

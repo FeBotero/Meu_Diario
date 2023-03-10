@@ -12,7 +12,7 @@ import { UserContext } from "../../context/UserContext"
 export function Login(){
     const[email,setEmail]=useState<String>("")
     const[password,setPassword]=useState<String>("")
-    const{user,toggleUser}:any = useContext(UserContext)
+    const{user,setUser}:any = useContext(UserContext)
 
     
 
@@ -37,9 +37,10 @@ export function Login(){
         
         if(request.status==200){
             localStorage.setItem("user",JSON.stringify(data))
-          
-            toggleUser(data.id)
+            
+            setUser(data.id)
             navigate("/diary")
+            
 
         }
     }
