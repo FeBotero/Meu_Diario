@@ -27,7 +27,7 @@ export function Header(){
 
 
     function handleDateChange(newDate:Date) {      
-        console.log(` Data atual ${newDate}`)
+        
         setDate(newDate)
       }   
   
@@ -44,7 +44,6 @@ export function Header(){
         navigate("/")
       }
       function getUser(){
-        console.log(user)
         setSelectUser(user)
       }
 
