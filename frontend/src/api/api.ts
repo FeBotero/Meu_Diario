@@ -1,6 +1,6 @@
 import axios from "axios"
 import { Tpost } from "../types/types"
-import "dotenv/config"
+
 
 
 const api = axios.create({
