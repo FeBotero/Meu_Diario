@@ -9,9 +9,10 @@ export const HomeContainer = styled.div`
         margin-top:10rem;
         font-size:3rem;
         z-index:9999;
-        color:#b79457;
+        color:${props=>props.theme.colors.title};
         font-family: 'Shantell Sans', cursive;
         text-align: center;
+        background:transparent;
     }
     img{
         margin-top:-10rem;
@@ -25,11 +26,12 @@ export const HomeContainer = styled.div`
       font-size: 2rem;
       margin-top: 5rem;
       text-align: center;
+      background:transparent;
     }
 
     img {
       width: 90%;
-      margin-top: -8rem;
+      margin-top: -3rem;
     }
   }
 

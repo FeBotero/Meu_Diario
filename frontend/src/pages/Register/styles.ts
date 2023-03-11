@@ -27,15 +27,12 @@ export const Container = styled.div`
 
 }
 
-
-
-
 `
 export const content=styled.div`
 margin-top:-10rem;
     height:40%;
     
-    background:white;
+    background:${props=>props.theme.colors.background};;
     padding:1rem;
     border-radius:1rem
 `
@@ -44,7 +41,7 @@ export const Header=styled.div`
     border-radius: 2rem 2rem  0 0 ;
 
     h2{
-        color:#851d86
+        color:${props=>props.theme.colors.text};
     }
 `
 export const Form=styled.div`
@@ -69,7 +66,7 @@ export const Form=styled.div`
     button:hover{
      
         border:1px solid transparent;
-        background-color:purple;
+        background-color:${props=>props.theme.colors.button};;
         color:white;
         transition:all 0.5s
     }

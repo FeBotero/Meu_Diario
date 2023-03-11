@@ -20,11 +20,15 @@ export function Header(){
   const { setDate } = useContext(dateContext)  
   
 
-    const {theme,toggleTheme}:any = useContext(ThemeContext)
+    const {theme,changeTheme} = useContext(ThemeContext)
 
     const{user,setUser}:any = useContext(UserContext)
     // const userInfo = JSON.parse(getInfo)
 
+    function handleChangeTheme() {
+      changeTheme();
+      // handleToggleMenu();
+    }
 
     function handleDateChange(newDate:Date) {      
         
@@ -71,7 +75,7 @@ export function Header(){
             !user
             ?
             <HeaderHome>
-               <button className="toggle" onClick={toggleTheme}>{theme=="light"?<Moon size={32} />:<Sun size={32} />}</button>
+               <button className="toggle" onClick={handleChangeTheme}>{theme=="light"?<Sun size={32} fill="white" />:<Moon size={32} />}</button>
               <button className="login" onClick={Login} >Login</button>
               
             </HeaderHome>
@@ -80,7 +84,7 @@ export function Header(){
              
              
               <Profile>
-              <button className="toggle" onClick={toggleTheme}>{theme=="light"?<Moon size={32} />:<Sun size={32} />}</button>
+              <button className="toggle" onClick={handleChangeTheme}>{theme=="light"?<Sun size={32} />:<Moon size={32} />}</button>
                 <div>
                 <button className="login" onClick={LogOut} >Logout</button>
                 </div>

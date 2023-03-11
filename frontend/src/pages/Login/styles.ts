@@ -35,7 +35,7 @@ export const content=styled.div`
     margin-top:-10rem;
     height:30%;
     
-    background:white;
+    background:${props=>props.theme.colors.background};
     padding:1rem;
     border-radius:1rem
 `
@@ -62,7 +62,7 @@ export const Form=styled.div`
         padding:0.5rem;
         background-color:white;
         border:1px solid purple;
-        color:purple;
+        color:${props=>props.theme.colors.primary};
         border-radius:0.5rem;
         cursor:pointer;
         transition:all 0.5s
@@ -70,8 +70,8 @@ export const Form=styled.div`
     button:hover{
      
         border:1px solid transparent;
-        background-color:purple;
-        color:white;
+        background-color:${props=>props.theme.colors.button};;
+        color:${props=>props.theme.colors.text};
         transition:all 0.5s
     }
     div{

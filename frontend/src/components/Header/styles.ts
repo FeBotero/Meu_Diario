@@ -8,18 +8,30 @@ export const HeaderContainer=styled.div`
     align-items:center;
     height:3rem;
     padding:1rem;
-    input{
+    background: ${props=>props.theme.colors.primary};
+        input{
     height:2rem;
+    background: transparent;
+    }
+    h1{
+        background: transparent;
+    }
+    svg{
+        background: transparent;
     }
     div{
+        display:flex;
+        justify-content: center;
+        background: transparent;
         a{
             display:flex;
             align-items:center;
-            
+            background: transparent;
             text-decoration:none;
 
         img{
-            height:2rem;        
+            height:2rem;   
+            background: transparent;     
         }
         }
         
@@ -29,20 +41,24 @@ export const HeaderContainer=styled.div`
         border: 0;
     }
     button{
-        cursor:pointer
+        cursor:pointer;
+        background: transparent;
     }
     
     @media only screen and (max-width: 600px) {
-    
+    display:flex;
+    align-items: center;
     height: auto;
     padding: 0.5rem;
     input {
       width: 30%;
-      margin-bottom: 0.5rem;
+      
+      background: transparent;
     }
     div {
-      justify-content: center;
-     
+        display:flex;
+        justify-content: center;
+    
       a{
         
         h1{
@@ -83,7 +99,7 @@ export const HeaderHome=styled.div`
     gap:0.5rem;
     .login{
         margin-left:0.5rem;
-        border:2px solid purple;
+        border:2px solid ${props=>props.theme.colors.title};
         padding:0.5rem;
         border-radius:0.5rem;
         background: transparent;
@@ -92,7 +108,7 @@ export const HeaderHome=styled.div`
     .login:hover{
         border:2px solid transparent;
         color:white;
-        background: purple;
+        background: ${props=>props.theme.colors.button};
         trasition:all 0.2s
     }
     @media only screen and (max-width: 600px) {

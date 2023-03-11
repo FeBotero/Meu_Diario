@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardConteiner=styled.div`
     display:flex;
     flex-direction:column;
-    background-color:grey;
+    background-color:${props=>props.theme.colors.secundary};
     width:30%;
     margin-top:0.5rem;
     padding:0.5rem;
@@ -16,6 +16,7 @@ export const CardConteiner=styled.div`
         text-align: justify;
         text-justify: inter-word;
         padding:0.5rem;
+        background:transparent;
     }
 
     @media only screen and (max-width: 768px) {
