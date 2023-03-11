@@ -7,7 +7,7 @@ import { dateContext } from "../../context/DateContext";
 
 import { Card } from "./Components/Card";
 import { Form } from "./Components/Form";
-import { ContainerD } from "./styles";
+import { ContainerD, ContainerF } from "./styles";
 
 import { Tpost } from "../../types/types";
 
@@ -38,6 +38,8 @@ export function Diary(){
             
         }
     }
+    const getToday = new Date()
+    const today = JSON.stringify(Intl.DateTimeFormat('pt-BR').format(getToday))
 
     const newDate = JSON.stringify(Intl.DateTimeFormat('pt-BR').format(date))
     function getUser(){
@@ -67,7 +69,10 @@ export function Diary(){
     
     return(
         <ContainerD>
-            {newDate?<Form refreshPost={getPostUser}/>:""}
+            
+             {newDate===today?<Form refreshPost={getPostUser}/>:<ContainerF>""</ContainerF>}
+            
+            
             <h1>Diário de {date? date.toLocaleDateString():""}</h1>
             {
                 posts.map((post:Tpost,index:number)=>(

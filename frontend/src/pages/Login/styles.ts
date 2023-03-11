@@ -57,6 +57,7 @@ export const Form=styled.div`
         flex-direction:column;
         gap:0.5rem;
         margin-top: 1rem;
+        
     }
     button{
         padding:0.5rem;
@@ -68,7 +69,7 @@ export const Form=styled.div`
         transition:all 0.5s
     }
     button:hover{
-     
+        
         border:1px solid transparent;
         background-color:${props=>props.theme.colors.button};;
         color:${props=>props.theme.colors.text};
@@ -88,5 +89,6 @@ export const Form=styled.div`
         font-size:large;
         border:0;
         outline:0;
+        color:${props=>props.theme.colors.button};
     }
 `
