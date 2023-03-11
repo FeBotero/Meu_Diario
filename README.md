@@ -8,8 +8,7 @@
 </p>
 <br><br>
 <p align="center">
-
- <span><img alt="Querido Diario" src="https://github.com/FeBotero/Meu_Diario/blob/main/frontend/public/logo.svg">uerido Diário</span>
+<img alt="Querido Diario" src="https://github.com/FeBotero/Meu_Diario/blob/main/frontend/public/logo.svg">uerido Diário
  </p>                
  
  <p align="center">
@@ -31,7 +30,7 @@
 
  <h2 id="layout">Layout</h2>
  <a href="https://meu-diario.vercel.app/">Demo</a>
- <p>Foto do projeto</p>
+
 <img alt="Home_light" src="https://github.com/FeBotero/Meu_Diario/blob/main/assets/home_light.png">
 <img alt="Login_dark" src="https://github.com/FeBotero/Meu_Diario/blob/main/assets/login_dark.png">
 <img alt="Mobile_dark" src="https://github.com/FeBotero/Meu_Diario/blob/main/assets/mobile_dark.png">
@@ -47,10 +46,6 @@
    <li>Compartilhamento de tema</li>
    <li>Responsividade</li>   
 </ul>
-   
-   
-  
-
   <h2 id="como_executar">Como executar</h2>
   <h3>Execute os comandos no seu terminal:</h3>
   
@@ -95,10 +90,11 @@ Obs: Para o backend é necessario a criação de uma conta no Atlas da MongoDB, 
 <h2 id="tecnologias">Tecnologias</h2>
   <ul>
   <li>React</li>
+  <li>Node</li>
   <li>Typescript</li>
   <li>Styled-components </li>
-  <li>Prisma</li>
-  <li>SQLite</li>
+  <li>Mongoose</li>
+  <li>MongoDB</li>
   </ul>
    
 <h2 id="autor">Autor</h2>
