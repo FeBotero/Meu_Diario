@@ -1,8 +1,10 @@
 import axios from "axios"
 import { Tpost } from "../types/types"
+import "dotenv/config"
+const URL = process.env.URL
 
 const api = axios.create({
-    baseURL:"http://localhost:3333",
+    baseURL:URL,
     headers:{
         "Content-Type":"application/json"
     }

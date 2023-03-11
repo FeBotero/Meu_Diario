@@ -5,7 +5,6 @@ import userRoutes from "./routes/user.routes"
 import postRoutes from "./routes/post.routes"
 import DB from "./db/db.helpers"
 
-const secret = process.env.SECRET
 const app = express()
 
 async function main(){
