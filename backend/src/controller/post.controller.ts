@@ -20,7 +20,7 @@ async function findAll(req:Irequest,res:Response){
 async function findById(req:Irequest,res:Response){
     const id = req.params
     if (!isObjectIdValid(id)) {
-        return res.status(404).json({ message: "ID inválido!" });
+        return res.status(400).json({ message: "ID inválido!" });
       }
     const post = await service.findByIdPost(id)
     res.send(post)
@@ -28,7 +28,7 @@ async function findById(req:Irequest,res:Response){
 async function findByUserId(req:Irequest,res:Response){
   const {author,date} = req.body
   if (!isObjectIdValid(author)) {
-      return res.status(404).json({ message: "ID inválido!" });
+      return res.status(400).json({ message: "ID inválido!" });
     }
   const posts = await service.findAllPosts()
   const postFilter = posts.filter(
@@ -42,13 +42,18 @@ async function findByUserId(req:Irequest,res:Response){
 
 async function create(req:Irequest,res:Response){
     const body = req.body
-    const post = await service.createPost(body)
-    res.send(post)
+    if(body.content==""){
+      res.status(400).send({ message: "Favor inserir conteúdo!" });
+    }else{
+      await service.createPost(body)
+      res.status(200).json({ message: "Post realizado com sucesso!" });
+    }
+    
 }
 async function updateById(req:Irequest,res:Response){
     const id = req.params
     if (!isObjectIdValid(id)) {
-        return res.status(404).json({ message: "ID inválido!" });
+        return res.status(400).json({ message: "ID inválido!" });
       }
     const body = req.body
     const post = await service.updatePost(id,body)
@@ -57,7 +62,7 @@ async function updateById(req:Irequest,res:Response){
 async function deleteByID(req:Irequest,res:Response){
     const id = req.params
     if (!isObjectIdValid(id)) {
-        return res.status(404).json({ message: "ID inválido!" });
+        return res.status(400).json({ message: "ID inválido!" });
       }
     await service.deletePost(id)
     res.send({message:"Post deleted"})

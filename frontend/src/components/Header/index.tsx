@@ -1,5 +1,4 @@
 import { useContext, useState,useEffect } from "react"
-
 import { HeaderContainer, HeaderHome, HeaderUser, Profile } from "./styles"
 import logo from "../../assets/logo.svg"
 
@@ -91,7 +90,7 @@ export function Header(){
             </Profile>
             </HeaderUser>
         }
-        
+
         </HeaderContainer>
     )
 }

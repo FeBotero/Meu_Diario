@@ -3,11 +3,16 @@
     padding: 0;
     box-sizing: border-box;
     /* overflow: hidden; */
+    background: transparent;
  
   
   font-family: 'Shantell Sans', cursive;
+
+
   }
-  
+  svg{
+    max-width: 2rem;
+  }
 
   :root{
     --background:#ccc;

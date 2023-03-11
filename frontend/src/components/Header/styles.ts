@@ -9,11 +9,6 @@ export const HeaderContainer=styled.header`
     left: 0;
     width: 100%;
     z-index: 1000;
-  
-
-
-
-
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -21,8 +16,8 @@ export const HeaderContainer=styled.header`
     padding:1rem;
     background: ${props=>props.theme.colors.primary};
         input{
-    height:2rem;
-    background: transparent;
+        height:2rem;
+        background: transparent;
     }
     h1{
         background: transparent;
@@ -63,7 +58,7 @@ export const HeaderContainer=styled.header`
     padding: 0.5rem;
     input {
       width: 30%;
-      
+      font-size:0.75rem;
       background: transparent;
     }
     div {
@@ -73,7 +68,7 @@ export const HeaderContainer=styled.header`
       a{
         
         h1{
-            font-size:1rem
+            font-size:0.8rem
         }
       }
     }

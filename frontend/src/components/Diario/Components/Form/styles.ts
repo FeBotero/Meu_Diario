@@ -16,7 +16,7 @@ export const FormContainer=styled.div`
         padding:0.3rem;
     }
 
-    div{
+    .div{
         display:flex;
         justify-content:flex-end;
         width:100%;
