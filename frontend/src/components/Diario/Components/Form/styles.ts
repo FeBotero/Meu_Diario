@@ -21,9 +21,9 @@ export const FormContainer=styled.section`
         button{
         display:flex;
         justify-content:center;
-        
-        
-        width:3rem;
+        padding:0.3rem;
+        border-radius:0.5rem;
+        width:4rem;
 
     }
     }
