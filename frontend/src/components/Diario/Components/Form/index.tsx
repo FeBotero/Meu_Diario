@@ -17,7 +17,7 @@ export function Form({refreshPost}:any){
     }
 
     async function postDiary(){
-        console.log(payload)
+        
          await apiService.post.createURL(payload)
 
          refreshPost()

@@ -10,7 +10,7 @@ function App() {
 
   
   const {theme}:any=useContext(ThemeContext)
-  console.log(typeof(theme))
+  
   
   return (
     <div className="App" >
