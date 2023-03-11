@@ -40,8 +40,6 @@ async function findByUserId(req:Irequest,res:Response){
   res.send(postFilter)
 }
 
-
-
 async function create(req:Irequest,res:Response){
     const body = req.body
     const post = await service.createPost(body)

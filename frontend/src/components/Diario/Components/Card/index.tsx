@@ -1,17 +1,26 @@
+import { apiService } from "../../../../api/api";
 import { CardConteiner, Title } from "./styles";
+import { Trash} from "@phosphor-icons/react";
 
 export interface Icard{
     content:string
 }
 
-export function Card({content,refreshPost}:any){
+export function Card({content,idPost,refreshPost}:any){
 
+
+    async function deletePost() {
+        
+        await apiService.post.deleteURL(idPost)
+        refreshPost()
+    }
+    
 
 
     return(
         <CardConteiner>
             <Title>
-                {/* <span>03/03/23 às 22:00</span> */}
+                <button onClick={deletePost}><Trash size={25}  /></button>
             </Title>
             <p>{content}</p>
         </CardConteiner>

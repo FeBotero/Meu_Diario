@@ -1,9 +1,9 @@
 import { Header } from "./components/Header"
 import { Outlet } from "react-router-dom"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
-import { ThemeProvider } from "styled-components";
-import light from "./styles/themes/light";
+import { AppContainer } from "./style";
+
 
 
 function App() {
@@ -16,7 +16,9 @@ function App() {
     <div className="App" >
       
       <Header />
+      <AppContainer>
       <Outlet  />
+      </AppContainer>
      
     </div>
   )

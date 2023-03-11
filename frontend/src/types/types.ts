@@ -10,6 +10,7 @@ export type Tuser = {
 
 
 export type Tpost={
+    _id?:string;
     author:string;
     content:string;
     createdAt?:String

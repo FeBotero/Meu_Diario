@@ -8,6 +8,7 @@ export const CardConteiner=styled.div`
     margin-top:0.5rem;
     padding:0.5rem;
     border-radius:0.5rem;
+    
 
     p{
         display: flex;
@@ -30,4 +31,13 @@ export const Title=styled.div`
     justify-content: flex-end;
     gap:0.5rem;
     font-weight:bold;
+    background: transparent;
+    button{
+        background: transparent;
+        cursor:pointer;
+        border:0
+    }
+    svg{
+        background: transparent;
+    }
 `

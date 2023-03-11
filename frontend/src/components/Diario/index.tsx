@@ -12,6 +12,8 @@ import { ContainerD } from "./styles";
 import { Tpost } from "../../types/types";
 
 
+
+
 export function Diary(){
     const { date } = useContext(dateContext);
     const{user,setUser}:any = useContext(UserContext)
@@ -69,7 +71,7 @@ export function Diary(){
             <h1>Diário de {date? date.toLocaleDateString():""}</h1>
             {
                 posts.map((post:Tpost,index:number)=>(
-                    <Card key={`${post.author}${index}`} content={post.content} refreshPost={getPostUser}/>
+                    <Card key={`${post.author}${index}`} content={post.content} idPost={post._id} refreshPost={getPostUser}/>
                 ))
             }
             

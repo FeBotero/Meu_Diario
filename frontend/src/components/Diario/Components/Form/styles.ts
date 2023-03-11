@@ -5,6 +5,7 @@ export const FormContainer=styled.section`
     flex-direction:column;
     width:20vw;
     gap:0.2rem;
+    padding-top:3rem ;
 
     textarea{
         resize: none;

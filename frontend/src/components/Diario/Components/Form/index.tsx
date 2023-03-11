@@ -18,21 +18,17 @@ export function Form({refreshPost}:any){
 
     async function postDiary(){
         console.log(payload)
-         const request = await apiService.post.createURL(payload)
+         await apiService.post.createURL(payload)
 
-         if(request.status==200){
-             alert("Post realizado com sucesso!")
-         }else{
-             alert("Aconteceu algo de errado!")
-         }
          refreshPost()
+        document.getElementById("text").value=""
     }
     
 
     return(
         <FormContainer>
             
-            <textarea placeholder="Três motivos para agradecer" onChange={e=>setContentPost(e.target.value)}/>
+            <textarea id="text"placeholder="Três motivos para agradecer" onChange={e=>setContentPost(e.target.value)}/>
             <div>
             <button onClick={postDiary}>Salvar</button>
                 </div>
