@@ -1,10 +1,10 @@
 import axios from "axios"
 import { Tpost } from "../types/types"
 import "dotenv/config"
-const URL = process.env.URL
+
 
 const api = axios.create({
-    baseURL:URL,
+    baseURL:"https://diaryback.onrender.com",
     headers:{
         "Content-Type":"application/json"
     }
