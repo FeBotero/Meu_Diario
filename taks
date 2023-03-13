@@ -8,31 +8,31 @@
     [   ] Login
         (X) Token(jwt)
         (X) Armazenamento LocalStorage
-        (   ) Uso de Context
+        (X) Uso de Context
     [X] Anotação
         (X) Criação de Anotação.
-            (   ) O input de anotação só aparece se a data selecionada for igual a hoje.
-            (   ) Só é possivel salvar uma anotação se a data for igual a hoje.
-        (   ) Edição de anotação.
-            (   ) Só é permitido alteração se a data da anotação for igual a hoje.
-            (   ) So apresenta a ferramenta de alteração se a data for igual a hoje.
-        (   ) Exclusão de anotação.
-        (   ) Exibição de anotação.
-            (   ) Será exibido todas as anotações referente ao dia selecionado.
+            ( X ) O input de anotação só aparece se a data selecionada for igual a hoje.
+            ( X ) Só é possivel salvar uma anotação se a data for igual a hoje.
+        ( C) Edição de anotação.
+            ( C ) Só é permitido alteração se a data da anotação for igual a hoje.
+            ( C ) So apresenta a ferramenta de alteração se a data for igual a hoje.
+        ( X ) Exclusão de anotação.
+        ( X ) Exibição de anotação.
+            ( X ) Será exibido todas as anotações referente ao dia selecionado.
         (X) Type: {
                 createdAt,
                 content,
                 author
                 },
-            }
-    [   ] Criação de Temas (Light / Dark /)
+            
+    [ X ] Criação de Temas (Light / Dark /)
         (X) Uso de Context
         (X) Uso de Styled-components
-        (   ) Uso de variaveis para cores
-        (   ) Dark{
+        ( X ) Uso de variaveis para cores
+        ( X ) Dark{
                 Cores voltadas para o preto, roxo e lilas
         }
-        (   ) Light{
+        ( X ) Light{
                 Cores voltadas para amarelo, rose e laranja
         }
     [   ] Organização de funções em pasta utils
@@ -48,13 +48,14 @@
         (   ) Validação de Token
             (   ) Controle de expiração de Token
             (   ) Armazenamento em BD
-    [   ] Criação de anotação
+        (   ) Validação de criação de usuario com o mesmo email
+    [ X ] Criação de anotação
         (X) Type:{
             content,
             author,
-        (   ) Validações de conteúdo
-        (   ) Validações de autor
-        (   ) Rotas de Cadastro / Atualização / Leitura  / Exclusão
+        ( X ) Validações de conteúdo
+        ( X ) Validações de autor
+        ( X ) Rotas de Cadastro / Atualização / Leitura  / Exclusão
     }
     [   ] Organização de funções em pasta utils
         (   ) Criar funções de busca e envio de dados diversas partes do projeto
@@ -63,7 +64,7 @@
 [OBJETIVOS]
     [X] Ententender contexto
     [   ] Melhorar organização de pastas
-    [   ] Enxugar componentes
+    [ X ] Enxugar componentes
     [   ] Serarar funções para reaproveitamento de codigo.
 [ EXTRAS ]
     [   ] Adicionar aspas para que cada postagem apareça como um comentário.
